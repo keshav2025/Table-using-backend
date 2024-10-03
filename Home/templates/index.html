@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>this is dajngo tests</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+  </head>
+  <style>
+    /* Style for the table */
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Style for table headers */
+th {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  font-size: 18px;
+}
+
+/* Style for table rows */
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Hover effect on table rows */
+tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Alternate row colors */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style for the first column (S.no) */
+td:first-child {
+  text-align: center;
+  font-weight: bold;
+}
+
+
+@media screen and (max-width: 600px) {
+  table, tr, th, td {
+    display: block;
+    width: 100%;
+  }
+  th {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+  td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 45%;
+    padding-left: 15px;
+    font-weight: bold;
+  }
+}
+
+  </style>
+  <body>
+  
+   
+   <table>
+    <tr>
+      <th>S.no</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>City</th>
+  </tr>
+  {% for people in peoples %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+    <td>{{people.name}}</td>
+    <td>{{people.Age}}</td>
+    <td>{{people.city}}</td>
+  </tr>
+  {% endfor %}
+   </table>
+
+    <script src="" async defer></script>
+  </body>
+</html>
